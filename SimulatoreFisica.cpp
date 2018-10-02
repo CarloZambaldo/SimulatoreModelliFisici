@@ -1,15 +1,15 @@
 /* -------------------------------------------- *
- *												*
- *		PROGRAMMA PER SIMULAZIONI FISICHE		*
- *												*
- *				   written by:	    			*
- *				 CARLO ZAMBALDO	    			*
- *		    (carlo.zambaldo@gmail.com)			*
- *												*
- *		LICEO GIROLAMO FRACASTORO, VERONA		*
- *												*
- *		Last Update: SEPTEMBER 21, 2018			*
- *												*
+ *                                              *
+ *      PROGRAMMA PER SIMULAZIONI FISICHE       *
+ *                                              *
+ *                written by:                   *
+ *              CARLO ZAMBALDO                  *
+ *         (carlo.zambaldo@gmail.com)           *
+ *                                              *
+ *      LICEO GIROLAMO FRACASTORO, VERONA       *
+ *                                              *
+ *       Last Update: SEPTEMBER 21, 2018        *
+ *                                              *
  * -------------------------------------------- */
 
 #include <math.h>
