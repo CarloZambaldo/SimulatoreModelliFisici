@@ -1,15 +1,15 @@
 /* -------------------------------------------- *
- *                                              *
- *      PROGRAMMA PER SIMULAZIONI FISICHE       *
- *                                              *
- *                written by:                   *
- *              CARLO ZAMBALDO                  *
- *         (carlo.zambaldo@gmail.com)           *
- *                                              *
- *      LICEO GIROLAMO FRACASTORO, VERONA       *
- *                                              *
- *       Last Update: SEPTEMBER 21, 2018        *
- *                                              *
+ *												*
+ *		PROGRAMMA PER SIMULAZIONI FISICHE		*
+ *												*
+ *				   written by:	    			*
+ *				 CARLO ZAMBALDO	    			*
+ *		    (carlo.zambaldo@gmail.com)			*
+ *												*
+ *		LICEO GIROLAMO FRACASTORO, VERONA		*
+ *												*
+ *		Last Update: NOVEMBER 06, 2018			*
+ *												*
  * -------------------------------------------- */
 
 #include <math.h>
@@ -24,11 +24,11 @@ using namespace std;
 #define pi 3.1415926		// valore di pi greco
 double fq=1.00;				// frequenza di registrazione dei dati [s]
 
-#define versione "3.0.4"	// Versione del programma
+#define versione "3.0.7"	// Versione del programma
 
 // -------------------------------------------------------------
 
-
+void prosDat(int scelta); // vedi giu'
 
 char NomeFile(){ // questa funzione dovrebbe modificare il nome del file per evitare omonimie (NON FUNZIONA)
 	char Num;
@@ -36,7 +36,7 @@ char NomeFile(){ // questa funzione dovrebbe modificare il nome del file per evi
 	cin>>Num;
 	return Num;
 }
-double Freq(double fre, double v){	// Algoritmo per aumentare la frequenza dei risultati quando la velocita'Â dell'oggetto aumenta (NON FUNZIONA)
+double Freq(double fre, double v){	// Algoritmo per aumentare la frequenza dei risultati quando la velocita' dell'oggetto aumenta (NON FUNZIONA)
 	fre=(fre/v)*100;
 	return fre;
 }
@@ -56,7 +56,7 @@ void moti(double x, double y, double v, double teta){
 	Ris1<<"0\t"<<x<<"\t"<<y<<"\t"<<v<<"\t"<<(teta*180.0/pi)<<"\t"<<vx<<"\t"<<vy<<"\t"<<g<<"\t"<<endl;
 	
 	for(double t=1; y>=0; t+=fq){
-		// calcolo la velocitÃ  di fuga dell'oggetto (se velocitÃ  iniziale Ã¨ maggiore allora break;
+		// calcolo la velocità di fuga dell'oggetto (se velocità iniziale è maggiore allora break;
 		if(vy<=sqrt((2*G*Mt)/(Rt+y))){
 			// calcolo a t+=fq ogni istante di tempo varie cose.
 			g=-(G*Mt)/pow((Rt+y),2.0);
@@ -75,7 +75,6 @@ void moti(double x, double y, double v, double teta){
 			break;
 		}
 	}
-	
 	
 			cout<<"File salvato con successo."<<endl;
 			Ris1<<"------------------ END OF FILE ------------------"<<endl;
@@ -98,8 +97,6 @@ void moti(double x, double y, double v, double teta){
 			cout<<"T [s]\tx [m]\ty [m]\tv [m/s]\tangle"<<endl;
 			cout<<time<<"\t"<<x<<"\t"<<y<<"\t"<<v<<"\t"<<(teta*180.0/pi)<<endl;
 			system("PAUSE");
-	
-	
 }
 
 // FORZA GRAVITAZIONALE - con moto associato
@@ -123,6 +120,12 @@ void grav(double A, double B, double d){
 
 		// Da inserire in futuro il richiamo alla procedura degli urti: quando i due corpi sono a distanza d=0 (oppure d=r1+r2)
 		// Da richiedere prima se l'urto sara' elastico o meno, poi inviare alla procedura corrispondente
+		{
+			char ooo;
+			cout<<"Vuoi proseguire con l'urto delle due particelle? [S]i - [N]o.";
+			if((ooo == 'S')||(ooo == 's')) prosDat(2);
+		}
+		
 		cout<<"File salvato con successo."<<endl;
 		Ris2<<"------------------ END OF FILE ------------------"<<endl;
 		Ris2.close();
@@ -180,16 +183,16 @@ void urtoA(double mA, double mB, double vA, double vB){
 
 // PIANO INCLINATO
 void PianoInclinato(double angle, double vi, double h){
-	
+	cout<<"NON IN FUNZIONE."<<endl;
 }
 
 
 // PRINCIPIO DI ARCHIMEDE
-void Archy(){ // da aggiungere se l'oggetto in caduta libera cade in acqua
+void Archy(){
+	cout<<"NON IN FUNZIONE."<<endl; // da aggiungere se l'oggetto in caduta libera cade in acqua
 }
 
 // -------------------------------------------------------------
-
 
 // PROCEDURA PER OTTENERE I DATI DA ELABORARE
 void getDat(int ka){
@@ -253,6 +256,10 @@ void getDat(int ka){
 	}
 }
 
+// PROCEDURA PER PROSEGUIRE UNA SIMULAZIONE IN UN ALTRO AMBIENTE (es. moto parabolico + rimbalzo pallina)
+void prosDat(int scelta){
+	cout<<"NON IN FUNZIONE."<<endl;
+}
 
 // -------------------------------------------------------------
 
@@ -261,6 +268,8 @@ int main(){ // menu del programma
 	int ope;
 
 	cout<<"Benvenuto nel simulatore. [v."<<versione<<"]"<<endl;
+	cout<<"Programmato da Carlo Zambaldo, 5CS, Liceo G.Fracastoro, Verona IT"<<endl;
+	cout<<"Per informazioni: carlo.zambaldo@gmail.com"<<endl<<endl;
 	system("PAUSE");
 	do{
 		system("CLS");
@@ -278,8 +287,6 @@ int main(){ // menu del programma
 
 	cout<<"Programma terminato."<<endl;
 	cout<<"ATTENZIONE! - Pregasi di spostare i File creati prima della prossima apertura del programma."<<endl;
-	system("PAUSE");
-	cout<<"Vorrei assicurarmi che tu abbia letto bene il testo qui sopra!"<<endl;
 	system("PAUSE");
 	return 0;
 }
