@@ -1,4 +1,4 @@
- *                                              *
+/*                                              *
  *      PROGRAMMA PER SIMULAZIONI FISICHE       *
  *                                              *
  *                written by:                   *
