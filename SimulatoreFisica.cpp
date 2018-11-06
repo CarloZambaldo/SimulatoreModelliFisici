@@ -270,6 +270,21 @@ int main(){ // menu del programma
 	cout<<"Programmato da Carlo Zambaldo, 5CS, Liceo G.Fracastoro, Verona IT"<<endl;
 	cout<<"Per informazioni: carlo.zambaldo@gmail.com"<<endl<<endl;
 	system("PAUSE");
+	{
+	    char cc;
+	    cout<<"Digita 'i' e premi invio se vuoi sapere la precisione della tua macchina, altrimenti digita 'n' e invio. ";
+	    cin>>cc;
+            if(cc == 'i'){
+                int i=0;
+                double e=1;
+		while(e+1>1){
+		    e/=2;
+		    i++;
+		}
+	        cout<<"Numero cifre mantissa: "<<i-1<<endl;
+		cout<<"Precisione di macchina: "<<2*e<<endl;
+	    }
+	}
 	do{
 		system("CLS");
 		cout<<"Simulazioni possibili:\n1 - Moti in 2D (parabolico)\n2 - Urti \n3 - Forza Elettrica \n4 - Forza  Gravitazionale ";
