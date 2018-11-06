@@ -1,15 +1,14 @@
-/* -------------------------------------------- *
- *												*
- *		PROGRAMMA PER SIMULAZIONI FISICHE		*
- *												*
- *				   written by:	    			*
- *				 CARLO ZAMBALDO	    			*
- *		    (carlo.zambaldo@gmail.com)			*
- *												*
- *		LICEO GIROLAMO FRACASTORO, VERONA		*
- *												*
- *		Last Update: NOVEMBER 06, 2018			*
- *												*
+ *                                              *
+ *      PROGRAMMA PER SIMULAZIONI FISICHE       *
+ *                                              *
+ *                written by:                   *
+ *              CARLO ZAMBALDO                  *
+ *         (carlo.zambaldo@gmail.com)           *
+ *                                              *
+ *      LICEO GIROLAMO FRACASTORO, VERONA       *
+ *                                              *
+ *       Last Update: NOVEMBER 06, 2018         *
+ *                                              *
  * -------------------------------------------- */
 
 #include <math.h>
@@ -36,7 +35,7 @@ char NomeFile(){ // questa funzione dovrebbe modificare il nome del file per evi
 	cin>>Num;
 	return Num;
 }
-double Freq(double fre, double v){	// Algoritmo per aumentare la frequenza dei risultati quando la velocita' dell'oggetto aumenta (NON FUNZIONA)
+double Freq(double fre, double v){	// Algoritmo per aumentare la frequenza dei risultati quando la velocita'Â dell'oggetto aumenta (NON FUNZIONA)
 	fre=(fre/v)*100;
 	return fre;
 }
@@ -56,7 +55,7 @@ void moti(double x, double y, double v, double teta){
 	Ris1<<"0\t"<<x<<"\t"<<y<<"\t"<<v<<"\t"<<(teta*180.0/pi)<<"\t"<<vx<<"\t"<<vy<<"\t"<<g<<"\t"<<endl;
 	
 	for(double t=1; y>=0; t+=fq){
-		// calcolo la velocità di fuga dell'oggetto (se velocità iniziale è maggiore allora break;
+		// calcolo la velocitÃ  di fuga dell'oggetto (se velocitÃ  iniziale Ã¨ maggiore allora break;
 		if(vy<=sqrt((2*G*Mt)/(Rt+y))){
 			// calcolo a t+=fq ogni istante di tempo varie cose.
 			g=-(G*Mt)/pow((Rt+y),2.0);
